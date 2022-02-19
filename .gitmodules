@@ -1,0 +1,3 @@
+[submodule "cpp_learning/common/glog"]
+	path = cpp_learning/common/glog
+	url = git@github.com:google/glog.git
