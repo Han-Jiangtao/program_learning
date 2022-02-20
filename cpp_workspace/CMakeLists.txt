@@ -14,8 +14,8 @@ add_executable(cpp_learning
 )
 
 
-include_directories(
-    ${PROJECT_SOURCE_DIR}
+target_include_directories(cpp_learning BEFORE
+    PUBLIC ${PROJECT_SOURCE_DIR}
 )
 
 target_compile_definitions(cpp_learning PUBLIC
@@ -28,6 +28,15 @@ target_compile_options(cpp_learning PUBLIC
 
 target_link_libraries(cpp_learning
     glog::glog
+)
+
+######################## dynamic learning #####################
+add_library(dynamic_learning
+    dynamic_learning/dynamic.cpp
+)
+
+target_include_directories(dynamic_learning BEFORE
+    PUBLIC ${PROJECT_SOURCE_DIR}/dynamic_learning
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
