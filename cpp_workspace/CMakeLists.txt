@@ -39,6 +39,14 @@ target_include_directories(dynamic_learning BEFORE
     PUBLIC ${PROJECT_SOURCE_DIR}/dynamic_learning
 )
 
+#target_compile_definitions(dynamic_learning PUBLIC
+#    -fPIC
+#)
+
+target_compile_options(dynamic_learning PUBLIC
+    -fPIC -g
+)
+
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
