@@ -11,4 +11,8 @@ then
     echo "Build Failed, please check error"
     exit 127
 fi
+cp cpp_learning ../../bin
+echo "copy cpp_learning to ../../bin"
+cp libdynamic_learning* ../../lib
+echo "copy libdynamic_learning ../../lib"
 exit 0
