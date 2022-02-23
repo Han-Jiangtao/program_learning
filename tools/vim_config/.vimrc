@@ -90,8 +90,15 @@ nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>v :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc','\~$','\.swp', '\.git']
+" markdown-preview.vim plug accelerator
+nmap <silent> <leader>8 <Plug>MarkdownPreview        " for normal mode
+imap <silent> <leader>8 <Plug>MarkdownPreview        " for insert mode
+nmap <silent> <leader>9 <Plug>StopMarkdownPreview    " for normal mode
+imap <silent> <leader>9 <Plug>StopMarkdownPreview    " for insert mode
 
 call plug#begin("~/.vim/autoplug")
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/markdown-preview.vim'
 call plug#end()
