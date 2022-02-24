@@ -98,6 +98,10 @@ imap <silent> <leader>8 <Plug>MarkdownPreview        " for insert mode
 nmap <silent> <leader>9 <Plug>StopMarkdownPreview    " for normal mode
 imap <silent> <leader>9 <Plug>StopMarkdownPreview    " for insert mode
 let g:mkdp_echo_preview_url=1
+let g:mkdp_open_to_the_world=0
+let g:mkdp_open_ip=''
+let g:mkdp_port=''
+
 
 call plug#begin("~/.vim/autoplug")
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
