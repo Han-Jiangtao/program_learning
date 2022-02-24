@@ -57,6 +57,8 @@ set list
 set listchars=tab:>-,trail:.,eol:<
 " unix回车换行
 set fileformat=unix
+" 使能退格键
+set backspace=2
 " vim使用系统剪切板
 set clipboard=unnamed
 " 显示编辑文件名
