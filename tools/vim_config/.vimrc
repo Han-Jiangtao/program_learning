@@ -88,10 +88,33 @@ inoremap jj <ESC>
 
 " Plug accelerator key
 " nerdtree plug accelerator"
-nnoremap <leader>d :NERDTreeToggle<CR>
-nnoremap <leader>v :NERDTreeFind<CR>
+" Check if NERDTree is open or active
+function! IsNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+" Highlight currently open buffer in NERDTree
+autocmd BufEnter * call SyncTree()
+
+function! ToggleNerdTree()
+  set eventignore=BufEnter
+  NERDTreeToggle
+  set eventignore=
+endfunction
+nnoremap <leader>v :call ToggleNerdTree()<CR>
+
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc','\~$','\.swp', '\.git']
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
 " markdown-preview.nvim plug accelerator
 nmap <silent> <leader>8 <Plug>MarkdownPreview        " for normal mode
 imap <silent> <leader>8 <Plug>MarkdownPreview        " for insert mode
