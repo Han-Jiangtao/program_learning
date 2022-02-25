@@ -109,4 +109,5 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'tpope/vim-rsi'
 call plug#end()
