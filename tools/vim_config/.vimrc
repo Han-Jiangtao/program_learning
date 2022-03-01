@@ -114,6 +114,7 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc','\~$','\.swp', '\.git']
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
+autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(winbufnr(v:val), "&bt"))')) | qa! | endif
 
 " markdown-preview.nvim plug accelerator
 nmap <silent> <leader>8 <Plug>MarkdownPreview        " for normal mode
