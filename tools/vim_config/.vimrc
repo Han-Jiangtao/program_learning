@@ -126,6 +126,9 @@ let g:mkdp_open_to_the_world=0
 let g:mkdp_open_ip=''
 let g:mkdp_port=''
 
+" vim-solarized8 plug config
+set background=dark
+autocmd vimenter * ++nested colorscheme solarized8
 
 call plug#begin("~/.vim/autoplug")
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -134,4 +137,5 @@ Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'tpope/vim-rsi'
+Plug 'lifepillar/vim-solarized8'
 call plug#end()
