@@ -138,4 +138,5 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'tpope/vim-rsi'
 Plug 'lifepillar/vim-solarized8'
+Plug 'vim-airline/vim-airline'
 call plug#end()
