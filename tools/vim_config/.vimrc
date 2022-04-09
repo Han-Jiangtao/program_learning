@@ -139,4 +139,5 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'tpope/vim-rsi'
 Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
