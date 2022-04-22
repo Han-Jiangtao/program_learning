@@ -6,4 +6,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/cpp_workspace/)
 add_subdirectory(${CMAKE_SOURCE_DIR}/protobuf/)
+message("CMAKE_CURRENT_BINARY_DIR1111111 ${CMAKE_CURRENT_BINARY_DIR}")
 message("CMake end")

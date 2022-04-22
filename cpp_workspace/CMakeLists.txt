@@ -15,6 +15,7 @@ add_executable(cpp_learning
 
 target_include_directories(cpp_learning BEFORE
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+    PUBLIC ${CMAKE_BINARY_DIR}
 )
 
 target_compile_definitions(cpp_learning PUBLIC
@@ -48,4 +49,5 @@ target_compile_options(dynamic_learning PUBLIC
     -fPIC -g
 )
 
+message("CMAKE_CURRENT_BINARY_DIR2222222 ${CMAKE_CURRENT_BINARY_DIR}")
 

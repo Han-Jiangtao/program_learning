@@ -7,6 +7,7 @@
 
 #include "common/log.h"
 #include "common/utils/string_util.h"
+#include "learning.pb.h"
 
 int MAIN(int argc, char* argv[]) {
     COMMON::LogUtil logUtil = COMMON::LogUtil(argv[0]);
