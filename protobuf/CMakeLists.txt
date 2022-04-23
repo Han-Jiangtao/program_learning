@@ -18,4 +18,5 @@ add_library(protobuf_learning
 target_compile_options(protobuf_learning PUBLIC
     -fPIC -g
 )
+target_link_libraries(protobuf_learning ${Protobuf_LIBRARIES})
 
