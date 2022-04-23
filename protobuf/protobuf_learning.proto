@@ -1,8 +1,11 @@
 syntax = "proto3";
 package protobuf_learning;
 option cc_generic_services = true;
-option optimize_for = LITE_RUNTIME;
 
 message simple_data {
     bytes data = 1;
+}
+
+message my_message {
+    repeated simple_data simple = 1;
 }

@@ -130,6 +130,9 @@ let g:mkdp_port=''
 set background=dark
 autocmd vimenter * ++nested colorscheme solarized8
 
+" nerdcommenter
+let g:NERDSpaceDelims = 1
+
 call plug#begin("~/.vim/autoplug")
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'

@@ -11,10 +11,12 @@
 
 void proto_test()
 {
-    protobuf_learning::simple_data a;
+    protobuf_learning::my_message a;
     void *b = malloc(1024 * 1024 * 1024);
     memset(b, 1, 1024 * 1024 * 1024);
-    a.set_data(b, 1024 * 1024 * 1024);
+    auto simple1 = a.add_simple();
+    simple1->set_allocated_data((std::string *)new std::string((char *)b, 1024 * 1024 * 1024));
+    free(b);
 }
 
 int MAIN(int argc, char* argv[]) {
