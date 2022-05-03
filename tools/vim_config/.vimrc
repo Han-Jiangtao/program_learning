@@ -117,14 +117,14 @@ autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(winbufnr(v:val), "&bt"))')) | qa! | endif
 
 " markdown-preview.nvim plug accelerator
-nmap <silent> <leader>8 <Plug>MarkdownPreview        " for normal mode
-imap <silent> <leader>8 <Plug>MarkdownPreview        " for insert mode
-nmap <silent> <leader>9 <Plug>StopMarkdownPreview    " for normal mode
-imap <silent> <leader>9 <Plug>StopMarkdownPreview    " for insert mode
+nmap <silent> <leader>8 <Plug>MarkdownPreview
+imap <silent> <leader>8 <Plug>MarkdownPreview
+nmap <silent> <leader>9 <Plug>StopMarkdownPreview
+imap <silent> <leader>9 <Plug>StopMarkdownPreview
 let g:mkdp_echo_preview_url=1
-let g:mkdp_open_to_the_world=0
+let g:mkdp_open_to_the_world=1
 let g:mkdp_open_ip=''
-let g:mkdp_port=''
+let g:mkdp_port='10001'
 
 " vim-solarized8 plug config
 set background=dark
