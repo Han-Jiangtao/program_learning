@@ -3,6 +3,9 @@ import queue
 import threading
 import multiprocessing
 
+import atexit
+from multiprocessing.util import Finalize
+
 
 class GlobalMgr(threading.Thread):
     def __init__(self, *args, **kwargs):
@@ -29,15 +32,47 @@ class GlobalMgr(threading.Thread):
     def event(self, *args, **kwargs):
         return self.mgr.Event(*args, *kwargs)
 
-def get_resource_from_global_mgr(tools, func, args, kwargs):
+def get_resource_from_global_mgr(tools, func, *args, **kwargs):
     key = str(time.time())
     tools["task_q"].put((key, func, args, kwargs))
-    while True:
+    res = None
+    while res is None:
         tools["resource_l"].acquire()
-        
+        res = tools["res_d"].pop(key, None)
         tools["resource_l"].release()
         time.sleep(0.0001)
+    return res
 
 def test_resource(tools):
-    event = tools[]
+    event = get_resource_from_global_mgr(tools, "event")
+    lock = get_resource_from_global_mgr(tools, "lock")
+    print("hanjiangtao start!", event, lock, flush=True)
+    cnt = 0
+    while not event.is_set():
+        lock.acquire()
+        time.sleep(0.01)
+        print(cnt, flush=True)
+        cnt = cnt + 1
+        lock.release()
 
+def release(mgr, process):
+    print("hanjiangtao register release")
+    mgr.stop_event.set()
+    mgr.join()
+    process.terminate()
+    process.join()
+
+
+if __name__ == "__main__":
+    mgr = GlobalMgr(daemon=True)
+    mgr.start()
+    tools = {
+        "resource_l": mgr.resource_l,
+        "res_d": mgr.res_d,
+        "task_q": mgr.task_q
+    }
+    process = multiprocessing.Process(target=test_resource, args=(tools,), daemon=True)
+    process.start()
+    #Finalize(None, release, args=(mgr, process,), exitpriority=100)
+    atexit.register(release, mgr, process)
+    time.sleep(2)
