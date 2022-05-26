@@ -63,7 +63,7 @@ def release(mgr, process):
     process.join()
 
 
-if __name__ == "__main__":
+def subprocess():
     mgr = GlobalMgr(daemon=True)
     mgr.start()
     tools = {
@@ -76,3 +76,8 @@ if __name__ == "__main__":
     #Finalize(None, release, args=(mgr, process,), exitpriority=100)
     atexit.register(release, mgr, process)
     time.sleep(2)
+
+if __name__ == "__main__":
+    process = multiprocessing.Process(target=subprocess, daemon=False)
+    process.start()
+    process.join()
