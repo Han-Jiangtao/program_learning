@@ -3,7 +3,6 @@ import queue
 import threading
 import multiprocessing
 
-import atexit
 
 class GlobalMgr(threading.Thread):
     def __init__(self, *args, **kwargs):
@@ -26,8 +25,7 @@ def release(mgr):
 def subprocess():
     mgr = GlobalMgr(daemon=True)
     mgr.start()
-    # multiprocessing.util.Finalize(None, release, args=(mgr,), exitpriority=100)
-    #atexit.register(release, mgr, process)
+    multiprocessing.util.Finalize(None, release, args=(mgr,), exitpriority=100)
     time.sleep(1)
 
 if __name__ == "__main__":
