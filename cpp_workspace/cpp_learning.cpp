@@ -25,4 +25,13 @@ int MAIN(int argc, char* argv[]) {
     for (int argLoc = 0; argLoc < argc; argLoc++) {
         LOG(INFO) << UTILS::StrUtil::StrFormat("arg[%d]:%s", argLoc, argv[argLoc]);
     }
+    Py_Initialize();
+    LOG(INFO) << UTILS::StrUtil::StrFormat("Py_None ref:%d", Py_None->ob_refcnt);
+    PyObject* testPy = PyImport_ImportModule("python_learning");
+    LOG(INFO) << UTILS::StrUtil::StrFormat("Py_None 1 ref:%d", Py_None->ob_refcnt);
+    PyObject* res = PyObject_CallMethod(testPy, "test_return_None", nullptr);
+    LOG(INFO) << UTILS::StrUtil::StrFormat("Py_None 2 ref:%d", Py_None->ob_refcnt);
+    PyObject* res1 = PyObject_CallMethod(testPy, "test_return_None", nullptr);
+    LOG(INFO) << UTILS::StrUtil::StrFormat("Py_None 3 ref:%d", Py_None->ob_refcnt);
+    Py_Finalize();
 }

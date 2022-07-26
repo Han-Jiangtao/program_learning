@@ -1,9 +1,3 @@
-
-/* singleton.h
- * autor: hanjiangtao
- * all rights resverd
-*/
-
 #ifndef __SINGLETON_H__
 #define __SINGLETON_H__
 

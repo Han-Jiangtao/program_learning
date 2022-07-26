@@ -16,3 +16,7 @@ if __name__ == "__main__":
     dynamic_library_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../lib")
     dll = cdll.LoadLibrary(os.path.join(dynamic_library_path, "libdynamic_learning" + dynamic_suffix))
     dll.qq()
+
+
+def test_return_None():
+    print("test_return_None")
