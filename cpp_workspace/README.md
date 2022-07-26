@@ -3,9 +3,9 @@ cpp learning testcase
 
 本仓添加依赖子仓google/glog</br>
 如果有任何侵权行为烦请联系本人删除</br>
-邮箱：hanjiangtao-pub@qq.com</br>
+邮箱：hanjiangtao-pub@hotmail.com</br>
 
-安装cmake\gcc\g++
+安装cmake\gcc\g++\python3
 
 mkdir -p cmake_workspace # 创建临时工作目录</br>
 cd cmake_workspace</br>

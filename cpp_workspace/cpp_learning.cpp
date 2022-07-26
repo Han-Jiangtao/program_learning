@@ -5,6 +5,7 @@
 
 #include "cpp_learning.h"
 
+#include "Python.h"
 #include "common/log.h"
 #include "common/utils/string_util.h"
 #include "protobuf_learning.pb.h"
@@ -23,9 +24,5 @@ int MAIN(int argc, char* argv[]) {
     COMMON::LogUtil logUtil = COMMON::LogUtil(argv[0]);
     for (int argLoc = 0; argLoc < argc; argLoc++) {
         LOG(INFO) << UTILS::StrUtil::StrFormat("arg[%d]:%s", argLoc, argv[argLoc]);
-    }
-    for (int i = 0; i < 1000; i++) {
-        LOG(INFO) << UTILS::StrUtil::StrFormat("proto_test[%d]", i);
-        proto_test();
     }
 }
