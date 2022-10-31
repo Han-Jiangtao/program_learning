@@ -89,3 +89,4 @@ email-ext:2.92
 localization-support:1.2
 localization-zh-cn:1.0.24
 role-strategy:562.v44e9a_e828d0e
+rebuild: 1.34
