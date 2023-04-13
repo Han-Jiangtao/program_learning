@@ -4,3 +4,4 @@ bin/cpp_learning
 lib/libdynamic_learning*
 tools/vim_config/.vim/autoplug/
 build/
+*.DS_Store
