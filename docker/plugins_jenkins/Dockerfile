@@ -1,6 +1,7 @@
 FROM jenkins/jenkins_amd64_base:lts
 COPY --chown=jenkins:jenkins plugins.txt /usr/share/jenkins/ref/plugins.txt
-ENV JENKINS_UC_EXPERIMENTAL "https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json"
+ENV JENKINS_UC "https://mirrors.aliyun.com/jenkins/updates"
+ENV JENKINS_UC_DOWNLOAD "https://mirrors.aliyun.com/jenkins/updates"
 RUN jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt
 USER root
 RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
