@@ -93,4 +93,4 @@ workflow-support
 ws-cleanup
 ansicolor
 skip-certificate-check
-PostBuildScript
+postbuildscript
