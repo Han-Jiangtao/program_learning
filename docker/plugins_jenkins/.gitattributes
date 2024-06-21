@@ -1,1 +1,0 @@
-jenkins_plugins_amd64.tar.gz filter=lfs diff=lfs merge=lfs -binary
