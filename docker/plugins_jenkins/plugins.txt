@@ -94,3 +94,6 @@ ws-cleanup
 ansicolor
 skip-certificate-check
 postbuildscript
+build-name-setter
+build-user-vars-plugin
+email-ext
