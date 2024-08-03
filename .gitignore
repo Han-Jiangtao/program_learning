@@ -5,3 +5,4 @@ lib/libdynamic_learning*
 tools/vim_config/.vim/autoplug/
 build/
 *.DS_Store
+docker/plugins_jenkins/jenkins_plugins_amd64.tar.gz

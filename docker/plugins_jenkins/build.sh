@@ -6,8 +6,8 @@ then
     exit 127
 fi
 
-docker rmi jenkins/jenkins:jdk17
-docker pull jenkins/jenkins:jdk17
+# docker rmi jenkins/jenkins:lts-jdk17
+# docker pull jenkins/jenkins:lts-jdk17
 
 image_name="jenkins/plugins_amd64:$version"
 file_name="jenkins_plugins_amd64.tar.gz"
@@ -17,6 +17,6 @@ echo "Docker build[$?], shell command[docker images] can find image named $image
 echo "Save image[$image_name] to file[$file_name]!"
 docker save -o $file_name $image_name
 
-docker rmi jenkins/jenkins:jdk17
+# docker rmi jenkins/jenkins:lts-jdk17
 echo "All step end!"
 
