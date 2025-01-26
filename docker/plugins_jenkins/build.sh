@@ -11,6 +11,7 @@ fi
 
 image_name="jenkins/plugins_amd64:$version"
 file_name="jenkins_plugins_amd64.tar.gz"
+docker rmi $image_name
 echo "We will build docker image:$image_name! Cost about 200s!"
 docker buildx build --no-cache -t $image_name --platform linux/amd64 .
 echo "Docker build[$?], shell command[docker images] can find image named $image_name!"

@@ -97,3 +97,6 @@ postbuildscript
 build-name-setter
 build-user-vars-plugin
 email-ext
+permissive-script-security
+uno-choice
+mask-passwords
